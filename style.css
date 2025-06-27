@@ -125,6 +125,22 @@ header {
   color: var(--primary-color);
 }
 
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--dark-color);
+  transition: all 0.3s ease;
+}
+
 /* Welcome Section */
 #welcome-section {
   height: 100vh;
@@ -203,8 +219,18 @@ header {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  text-align: justify;
   padding-right: 1.5rem;
+  /* Default to left-align for all views */
+  text-align: left;
+  /* Hyphenation for better mobile word breaks */
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.about-text {
+  padding: 0 1.5rem;
+  text-align: left;
 }
 
 .skills-container {
@@ -452,10 +478,63 @@ footer {
     text-align: center;
   }
 }
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
 
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 2rem 0;
+    z-index: 99;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu li {
+    margin: 1.5rem 0;
+  }
+
+  /* Adjust welcome section padding to account for fixed navbar */
+  #welcome-section {
+    padding-top: 70px;
+  }
+}
 img {
   max-width: 100%;
   height: auto;
+}
+/* Desktop-only justification */
+@media (min-width: 768px) {
+  .about-text p {
+    text-align: justify;
+    /* Optional: better justification with these properties */
+    text-justify: inter-word;
+    -webkit-text-justify: inter-word;
+  }
 }
 
 .contact-container .fa-whatsapp {
