@@ -540,3 +540,28 @@ img {
 .contact-container .fa-whatsapp {
   color: #25d366; /* WhatsApp green */
 }
+
+.degree-section{
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.degree-container{
+  display: flex;
+  justify-content: center;
+}
+
+.degree-img {
+  max-width: 600px;   /* keeps it from being too big */
+  width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 12%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.degree-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
