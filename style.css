@@ -349,8 +349,12 @@ header {
 
 /* Contact Section */
 #contact {
-  padding: 6rem 0;
+  padding: 1rem;
   background: white;
+}
+
+.last{
+  padding: 6rem 0;
 }
 
 .contact-container {
